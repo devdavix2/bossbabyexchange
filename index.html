@@ -457,10 +457,12 @@
             <div class="row align-items-center">
                 <!-- Left-Aligned Hero Text -->
                 <div class="col-md-6 p-4 text-white hero-text">
-                    <h1>Turn Gift Cards into Cash Instantly 💸</h1>
-                    <h2>Safe and Reliable Trading Platform</h2>
-                    <p>Exchange your digital assets and gift cards with confidence. Enjoy swift, secure payments, and
-                        seamless transactions in just a few minutes.</p>
+                    <h2 class=" mb-2 text-gold">Turn Gift Cards into Cash Instantly 💸</h2>
+                    <h3 class=" mb-2">Safe and Reliable Trading Platform</h3>
+                    <p class=" mb-2">
+                        Exchange your digital assets and gift cards with confidence at <strong>Boss Baby Exchange</strong>.
+                        Enjoy swift, secure payments, and seamless transactions in just a few minutes.
+                    </p>
                     <button class="btn btn-primary">Start Trading</button>
                 </div>
 
@@ -557,12 +559,101 @@
         </div>
     </section>
 
+    <section id="services" class="py-5 bg-black text-white">
+        <div class="container">
+            <h2 class="text-center mb-5 text-gold">Our Price Rates</h2>
+    
+            <!-- Table to display cryptocurrency pairs and their prices -->
+            <table id="crypto-table">
+                <thead>
+                    <tr>
+                        <th>Cryptocurrency</th>
+                        <th>Price (USD)</th>
+                        <th>24h Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // Array of cryptocurrency pairs you want to track
+            const pairs = [
+                'bitcoin', 'ethereum', 'binancecoin', 'solana', 'ripple', 'cardano',
+                'dogecoin', 'polkadot',
+            ];
 
+                const localStorageKey = 'crypto_data'; // Key for localStorage
 
+                // Function to fetch and display cryptocurrency data
+                function fetchCryptoData() {
+                    const apiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${pairs.join(',')}&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`;
 
+                // Check if data is available in localStorage
+                const cachedData = localStorage.getItem(localStorageKey);
+                const cachedTime = localStorage.getItem('crypto_data_time');
+                const currentTime = Date.now();
 
+                        if (cachedData && cachedTime && (currentTime - cachedTime < 3600000)) {
+                            // If cached data exists and is less than 1 hour old, use cached data
+                            displayCryptoData(JSON.parse(cachedData));
+                        } else {
+                            // Otherwise, fetch new data from the API
+                            fetch(apiUrl)
+                                .then(response => response.json())
+                                .then(data => {
+                                    localStorage.setItem(localStorageKey, JSON.stringify(data)); // Store data in localStorage
+                                    localStorage.setItem('crypto_data_time', currentTime.toString()); // Store fetch timestamp
+                                    displayCryptoData(data); // Display the new data
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching crypto data:', error);
+                                });
+                        }
+                    }
 
+                    // Function to display cryptocurrency data in the table
+                    function displayCryptoData(data) {
+                        const tbody = document.querySelector('#crypto-table tbody');
+                        tbody.innerHTML = '';  // Clear the table before inserting new data
 
+                        // Loop through each cryptocurrency pair and populate the table
+                        pairs.forEach(pair => {
+                            const price = data[pair]?.usd;
+                            const change = data[pair]?.usd_24h_change;
+
+                            if (price !== undefined) {
+                                // Determine the 24h change class
+                                let changeClass = 'change-neutral';
+                                if (change > 0) {
+                                    changeClass = 'change-positive';
+                                } else if (change < 0) {
+                                    changeClass = 'change-negative';
+                                }
+
+                                // Update the image path to your local image folder
+                                const iconUrl = `images/${pair}.png`; // Adjust the path to where you uploaded the icons
+
+                                // Create the row for the cryptocurrency
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                            <td><img src="${iconUrl}" class="coin-icon" alt="${pair}" style="width: 24px; height: 24px; margin-right: 8px;">${pair.charAt(0).toUpperCase() + pair.slice(1)}</td>
+                            <td>$${price.toFixed(2)}</td>
+                            <td class="${changeClass}">${change ? change.toFixed(2) + '%' : 'N/A'}</td>
+                        `;
+                                tbody.appendChild(row);
+                            }
+                        });
+                    }
+
+                    // Fetch data when the page loads
+                    window.onload = fetchCryptoData;
+                </script>
+            </section>
+    
 
 
 

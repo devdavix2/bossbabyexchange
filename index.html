@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bossbaby Exchange - About Us</title>
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Font Awesome -->
+
+    <style>
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            border-radius: 50%;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-icon {
+            width: 80px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .navbar-brand img {
+            max-height: 70px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+            /* Push links away from the logo */
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: gold;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: gold;
+            border: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid gold;
+            color: gold;
+            font-weight: bold;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: black;
+            border-color: white;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .navbar-collapse {
+            padding: 1rem;
+            /* Add padding to mobile menu */
+        }
+
+        .navbar-nav .nav-item {
+            padding-bottom: 0.5rem;
+            /* Add spacing between links in mobile view */
+        }
+
+        .text-gold {
+            color: rgb(225, 215, 0);
+            /* Gold color */
+        }
+
+        .card-title.text-gold:hover {
+            color: #ffd700;
+            /* Brighter gold on hover */
+        }
+
+        .text-gold {
+            color: rgb(225, 215, 0);
+            /* Gold for big quotes and names */
+        }
+
+
+        .carousel-item {
+            background-color: #3d3d3d;
+            height: 350px;
+            padding: 50px;
+            border-radius: 10px;
+        }
+
+        .carousel-item p {
+            font-style: italic;
+            /* Elegant testimonial text */
+            line-height: 1.8;
+
+        }
+
+        h1.display-1.text-gold {
+            font-size: 4rem;
+            /* Big quotation mark */
+            line-height: 1;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%);
+            /* Visible controls on dark background */
+        }
+
+        .text-gold {
+            color: rgb(225, 215, 0);
+            /* Gold color for headings and accents */
+        }
+
+        #contact h4 {
+            font-weight: bold;
+            /* Bold titles for the contact section */
+        }
+
+        #contact .form-label {
+            font-weight: bold;
+            /* Bold form labels */
+        }
+
+        #contact .form-control {
+            border-radius: 10px;
+            /* Rounded input fields */
+            padding: 15px;
+            /* Larger padding for easier input */
+            background-color: #333;
+            /* Dark background for form fields */
+            color: white;
+            /* White text for input */
+        }
+
+        #contact .btn-primary {
+            background-color: rgb(225, 215, 0);
+            /* Gold button */
+            border-color: rgb(225, 215, 0);
+        }
+
+        #contact .btn-primary:hover {
+            background-color: #ffd700;
+            /* Lighter gold on hover */
+            border-color: #ffd700;
+        }
+
+        #contact .list-unstyled {
+            padding-left: 0;
+        }
+
+        #contact .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+
+        /* Accordion Header Style */
+        .accordion-button {
+            background-color: #3d3d3d;
+
+            /* Light grey background for the accordion tab */
+            color: #ffffff;
+            /* Dark text color for readability */
+            border: 1px solid #3b3a3a;
+            /* Light border */
+            border-radius: 5px;
+            /* Rounded corners */
+            padding: 15px;
+            /* Add some padding for a better visual look */
+        }
+
+        /* Accordion Header Hover and Active State */
+        .accordion-button:hover,
+        .accordion-button:focus {
+            background-color: #3d3d3d;
+            /* Slightly darker grey when hovered or focused */
+            border-color: #ccc;
+            /* Darker border on hover/focus */
+        }
+
+        /* Accordion Collapse Panel (Content) */
+        .accordion-collapse {
+            background-color: #000000;
+            /* Lighter background color for the collapsed content */
+            border-top: 1px solid #ddd;
+            color: #ffffff;
+
+            /* Light border at the top of the content */
+        }
+
+        /* Accordion Button Icon (for plus/minus) */
+        .accordion-button:not(.collapsed) {
+            background-color: #000000;
+            /* Darker grey when the tab is open */
+        }
+
+        .text-gold {
+            color: gold;
+        }
+
+        .btn-outline-gold {
+            border: 1px solid gold;
+            color: gold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-gold:hover {
+            background-color: gold;
+            color: #111;
+        }
+
+        #banner {
+            position: relative;
+            height: 100vh;
+            /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        #banner .container {
+            max-width: 700px;
+            z-index: 2;
+        }
+
+        #banner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Adds a dark overlay for text visibility */
+            z-index: 1;
+        }
+
+        .text-gold {
+            color: gold;
+        }
+
+        .btn-primary {
+            background-color: gold;
+            border: none;
+            color: black;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: black;
+        }
+
+
+
+        footer {
+            background-color: #111;
+            color: #fff;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: gold;
+            /* Hover effect for social icons */
+        }
+
+        footer i {
+            font-size: 1.5rem;
+        }
+
+        footer .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer .container p {
+            margin: 5px 0;
+        }
+
+        footer .container a {
+            margin: 0 10px;
+        }
+
+
+        .price-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #131722;
+            /* Dark container background */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #444;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            font-size: 1.2rem;
+        }
+
+        td {
+            background-color: #232a32;
+        }
+
+        .table-header {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .coin-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .sparkline {
+            width: 100px;
+            height: 25px;
+        }
+
+        .icon-cell {
+            font-size: 1.5rem;
+        }
+
+        .no-data {
+            color: red;
+        }
+
+
+        .change-neutral {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark container py-3">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="./logoboss (2).png" alt="Logo">
+            </a>
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faqs">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- Buttons -->
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary">Login</button>
+                    <button class="btn btn-secondary">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-5" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left-Aligned Hero Text -->
+                <div class="col-md-6 p-4 text-white hero-text">
+                    <h1>Turn Gift Cards into Cash Instantly 💸</h1>
+                    <h2>Safe and Reliable Trading Platform</h2>
+                    <p>Exchange your digital assets and gift cards with confidence. Enjoy swift, secure payments, and
+                        seamless transactions in just a few minutes.</p>
+                    <button class="btn btn-primary">Start Trading</button>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="col-md-6">
+                    <img src="./img/hp.png" class="img-fluid" alt="Hero Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="./img/btt.png" width="400" height="400" class="img-fluid rounded" alt="About Us">
+                </div>
+                <div class="col-md-6 p-4 ">
+                    <h5 class="text-uppercase text-warning">About Us</h5>
+                    <p>Bossbaby Exchange is a leading platform specializing in cryptocurrency and gift card exchanges.
+                        We offer fast, secure, and reliable services, making it easy for individuals and businesses to
+                        trade digital assets.</p>
+                    <h2>Our Mission</h2>
+                    <p>To revolutionize the digital currency market by delivering a secure, efficient, and user-friendly
+                        exchange service that empowers our customers to trade with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="services" class="py-5 bg-black text-white">
+        <div class="container">
+            <h2 class="text-center mb-5 text-gold">Our Services</h2>
+            <div class="row text-center">
+                <!-- Service 1: Gift Card Exchange -->
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-dark border-0 shadow">
+                        <div class="card-body">
+                            <img src="./img/giftcard.png" alt="Gift Card Exchange" class="img-fluid mb-3"
+                                style="height: 80px;">
+                            <h5 class="card-title text-gold">Gift Card Exchange</h5>
+                            <p class="card-text text-white">
+                                Convert your gift cards to cash or digital assets at the best rates, securely and
+                                quickly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2: Crypto Exchange -->
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-dark border-0 shadow">
+                        <div class="card-body">
+                            <img src="./img/crpto.png" alt="Crypto Exchange" class="img-fluid mb-3"
+                                style="height: 80px;">
+                            <h5 class="card-title text-gold">Crypto Exchange</h5>
+                            <p class="card-text text-white">
+                                Seamlessly buy, sell, or trade your cryptocurrencies with confidence and ease.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3: Secure Transactions -->
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-dark border-0 shadow">
+                        <div class="card-body">
+                            <img src="./img/abb.png" alt="Secure Transactions" class="img-fluid mb-3"
+                                style="height: 80px;">
+                            <h5 class="card-title text-gold">Secure Transactions</h5>
+                            <p class="card-text text-white">
+                                Enjoy peace of mind with robust encryption safeguarding your trades and assets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4: Instant Payments -->
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-dark border-0 shadow">
+                        <div class="card-body">
+                            <img src="./img/jetss.png" alt="Instant Payments" class="img-fluid mb-3"
+                                style="height: 80px;">
+                            <h5 class="card-title text-gold">Instant Payments</h5>
+                            <p class="card-text text-white">
+                                Receive fast payouts after trades are completed—no waiting, no stress.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="services" class="py-5 bg-black text-white">
+        <div class="container">
+            <h2 class="text-center mb-5 text-gold">Our Price Rates </h2>
+
+
+
+
+
+
+
+
+            <!-- Table to display cryptocurrency pairs and their prices -->
+            <table id="crypto-table">
+                <thead>
+                    <tr>
+                        <th>Cryptocurrency</th>
+                        <th>Price (USD)</th>
+                        <th>24h Change</th>
+                        <th>Icon</th>
+                        <th>Price Trend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // Array of cryptocurrency pairs you want to track
+            const pairs = [
+                'bitcoin', 'ethereum', 'binancecoin', 'solana', 'ripple', 'cardano',
+                'dogecoin', 'polkadot', 'matic', 'shiba', 'litecoin', 'avalanche',
+                'tron', 'cosmos', 'uniswap'
+            ];
+
+            const localStorageKey = 'crypto_data'; // Key for localStorage
+
+            // Function to fetch and display cryptocurrency data
+            function fetchCryptoData() {
+                const apiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${pairs.join(',')}&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`;
+
+                // Check if data is available in localStorage
+                const cachedData = localStorage.getItem(localStorageKey);
+                const cachedTime = localStorage.getItem('crypto_data_time');
+                const currentTime = Date.now();
+
+                if (cachedData && cachedTime && (currentTime - cachedTime < 3600000)) {
+                    // If cached data exists and is less than 1 hour old, use cached data
+                    displayCryptoData(JSON.parse(cachedData));
+                } else {
+                    // Otherwise, fetch new data from the API
+                    fetch(apiUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            localStorage.setItem(localStorageKey, JSON.stringify(data)); // Store data in localStorage
+                            localStorage.setItem('crypto_data_time', currentTime.toString()); // Store fetch timestamp
+                            displayCryptoData(data); // Display the new data
+                        })
+                        .catch(error => {
+                            console.error('Error fetching crypto data:', error);
+                        });
+                }
+            }
+
+            // Function to display cryptocurrency data in the table
+            function displayCryptoData(data) {
+                const tbody = document.querySelector('#crypto-table tbody');
+                tbody.innerHTML = '';  // Clear the table before inserting new data
+
+                // Loop through each cryptocurrency pair and populate the table
+                pairs.forEach(pair => {
+                    const price = data[pair]?.usd;
+                    const change = data[pair]?.usd_24h_change;
+                    const marketCap = data[pair]?.usd_market_cap;
+                    const volume = data[pair]?.usd_24h_vol;
+                    const iconUrl = `https://crypticoins.com/icon/${pair}.png`; // CoinGecko API URL for icons
+
+                    if (price !== undefined) {
+                        // Determine the 24h change class
+                        let changeClass = 'change-neutral';
+                        if (change > 0) {
+                            changeClass = 'change-positive';
+                        } else if (change < 0) {
+                            changeClass = 'change-negative';
+                        }
+
+                        // Create the row for the cryptocurrency
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                        <td>${pair.charAt(0).toUpperCase() + pair.slice(1)}</td>
+                        <td>$${price.toFixed(2)}</td>
+                        <td class="${changeClass}">${change ? change.toFixed(2) + '%' : 'N/A'}</td>
+                        <td><img src="${iconUrl}" class="coin-icon" alt="${pair}"></td>
+                        <td><canvas class="sparkline" id="sparkline-${pair}"></canvas></td>
+                    `;
+                        tbody.appendChild(row);
+
+                        // Generate Sparkline graph for price trend (using Chart.js)
+                        const sparklineCanvas = document.getElementById(`sparkline-${pair}`);
+                        const sparklineCtx = sparklineCanvas.getContext('2d');
+                        generateSparkline(sparklineCtx, pair);
+                    }
+                });
+            }
+
+            // Generate a simple sparkline for each cryptocurrency
+            function generateSparkline(ctx, pair) {
+                const apiUrl = `https://api.coingecko.com/api/v3/coins/${pair}/market_chart?vs_currency=usd&days=1`;
+
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const prices = data.prices.map(price => price[1]); // Extract price data
+                        if (prices.length > 0) {
+                            new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: prices.map((_, index) => index), // Simple index for labels
+                                    datasets: [{
+                                        label: '',
+                                        data: prices,
+                                        borderColor: '#00d1b2',
+                                        backgroundColor: 'rgba(0, 209, 178, 0.2)',
+                                        borderWidth: 1,
+                                        fill: true,
+                                        lineTension: 0.4
+                                    }]
+                                },
+                                options: {
+                                    responsive: false,
+                                    scales: {
+                                        x: {
+                                            display: false // Hide x-axis
+                                        },
+                                        y: {
+                                            display: false // Hide y-axis
+                                        }
+                                    },
+                                    elements: {
+                                        point: {
+                                            radius: 0 // Hide data points
+                                        }
+                                    },
+                                    plugins: {
+                                        legend: {
+                                            display: false // Hide legend
+                                        }
+                                    }
+                                }
+                            });
+                        } else {
+                            ctx.parentElement.innerHTML = '<span class="no-data">No data available</span>';
+                        }
+                    })
+                    .catch(error => console.error('Error fetching market chart data:', error));
+            }
+
+            // Fetch data when the page loads
+            window.onload = fetchCryptoData;
+        </script>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <section id="banner" class="text-center text-light py-5"
+        style="background: url('./hero.jpeg') no-repeat center center / cover;">
+        <div class="container">
+            <h1 class="display-4 text-gold fw-bold">Trade Crypto & Gift Cards with Ease</h1>
+            <p class="lead mt-3">Experience fast, secure, and reliable transactions on Bossbaby Exchange.</p>
+            <a href="#get-started" class="btn btn-primary btn-lg mt-4 px-5">Get Started</a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- Mobile App Section -->
+    <section id="mobile-app" class="text-light py-5" style="background-color: #111;">
+        <div class="container text-center">
+            <h5 class="section-title">Our Mobile App</h5>
+            <p>Stay connected and manage your exchanges on the go!</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6 lazy-fade">
+                    <img src="./img/Trending_New_UI_Design-removebg-preview.png" class="img-fluid rounded"
+                        alt="Mobile App Coming Soon">
+                </div>
+            </div>
+            <h2 class="mt-4" style="color: gold;">Coming Soon</h2>
+            <p class="mt-2">We're working hard to bring you an incredible mobile experience. Stay tuned!</p>
+            <div class="mt-4">
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="testimonials" class="py-5 bg-black text-white">
+        <div class="container">
+            <h2 class="text-center mb-5 text-gold">What Our Clients Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Testimonial 1 -->
+                    <div class="carousel-item active">
+                        <div class="text-center">
+                            <h1 class="display-1 text-gold">“</h1>
+                            <p class="text-white fs-5">
+                                "BossBaby Exchange is the best! I traded my gift cards and received payment faster than
+                                I expected. Highly recommended."
+                            </p>
+                            <h5 class="text-gold mt-3">Ademola Oke</h5>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <h1 class="display-1 text-gold">“</h1>
+                            <p class="text-white fs-5">
+                                "Trading crypto on BossBaby Exchange has been a breeze. It's safe, easy, and the rates
+                                are fantastic. My go-to platform!"
+                            </p>
+                            <h5 class="text-gold mt-3">Chinelo Okeke</h5>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <h1 class="display-1 text-gold">“</h1>
+                            <p class="text-white fs-5">
+                                "BossBaby Exchange has earned my trust with their secure platform and fast payment
+                                system. Keep up the great work!"
+                            </p>
+                            <h5 class="text-gold mt-3">Tunde Balogun</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5 bg-black text-white">
+        <div class="container">
+            <h2 class="text-center text-gold mb-5">Frequently Asked Questions</h2>
+            <div class="accordion" id="accordionFAQ">
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What is BossBaby Exchange?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            BossBaby Exchange is a secure and trusted platform where users can trade gift cards,
+                            cryptocurrency, and digital assets with fast payouts.
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How secure is BossBaby Exchange?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            We use advanced encryption and security measures to ensure that your trades and personal
+                            data are fully protected at all times.
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How long does it take to complete a trade?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Trades are processed and paid out instantly, with no delays or waiting times.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="contact" class="py-5 bg-black text-white">
+        <div class="container">
+            <h2 class="text-center text-gold mb-5">Contact Us</h2>
+            <div class="row">
+                <!-- Contact Details -->
+                <div class="col-md-6">
+                    <h4 class="text-gold">Get in Touch</h4>
+                    <p>If you have any questions or need assistance, feel free to contact us:</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Email:</strong> <a href="mailto:support@bossbabyexchange.com"
+                                class="text-gold">support@bossbabyexchange.com</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+2348001234567" class="text-gold">+234 800 123 4567</a>
+                        </li>
+                        <li><strong>Address:</strong> 123 BossBaby Street, Lagos, Nigeria</li>
+                    </ul>
+                    <h5 class="text-gold">Follow Us</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/bossbabyexchange" target="_blank" class="text-gold">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.twitter.com/bossbabyexchange" target="_blank" class="text-gold">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/bossbabyexchange" target="_blank" class="text-gold">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://wa.me/<YOUR_PHONE_NUMBER>" target="_blank" class="text-gold">
+                                <i class="fab fa-whatsapp fa-2x"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Contact Form -->
+                <div class="col-md-6">
+                    <h4 class="text-gold">Send Us a Message</h4>
+                    <form action="send_message.php" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-black">Latest from Our Blog</h2>
+                <p class="text-black">Stay updated with the latest news, tips, and insights in the world of crypto and
+                    gift card exchange.
+                </p>
+            </div>
+            <div class="row">
+                <!-- Blog Post 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/Digital wallet illustration.jpeg" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <h5 class="card-title">How to Trade Crypto Safely</h5>
+                            <p class="card-text">Discover essential tips for secure crypto trading and avoid common
+                                pitfalls.</p>
+                            <a href="blog-post1.html" class="btn btn-outline-gold">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/Digital wallet illustration.jpeg" class="card-img-top" alt="Blog Post 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Top Gift Cards to Exchange in 2024</h5>
+                            <p class="card-text">Explore the most valuable gift cards for trading and how to maximize
+                                your returns.</p>
+                            <a href="blog-post2.html" class="btn btn-outline-gold">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/Digital wallet illustration.jpeg" class="card-img-top" alt="Blog Post 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Crypto Trends to Watch in 2024</h5>
+                            <p class="card-text">Stay ahead in the market with insights on upcoming crypto trends and
+                                opportunities.</p>
+                            <a href="blog-post3.html" class="btn btn-outline-gold">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Bossbaby Exchange. All Rights Reserved.</p>
+
+
+        </div>
+    </footer>
+
+
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+2349066644999?text=Hello! I would like to know more about Bossbaby Exchange."
+        target="_blank" class="whatsapp-float">
+        <img src="./img/image-removebg-preview (1).png" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll('.lazy-fade, .lazy-slide, .lazy-zoom');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
